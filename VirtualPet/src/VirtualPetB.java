@@ -40,7 +40,7 @@ public class VirtualPetB {
         return happyLevel;
     }
 
-    public void play(Game game){
+    public boolean play(Game game){
         boolean wonGame = game.isWinner();
         if(happyLevel < 11 - game.gethappinessIncr() && wonGame){
             happyLevel += game.gethappinessIncr();
@@ -51,6 +51,7 @@ public class VirtualPetB {
         if(weight > 6 + game.getweightDecr()){
             weight -= game.getweightDecr();
         }
+        return wonGame;
     }
 
     public void updateStatus() {
